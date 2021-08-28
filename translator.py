@@ -23,11 +23,12 @@ def translate_001(mainclass, form, language, en_US, ru_RU):
             mainclass.ui.settings_item.setText(ru_RU.get()['setsitem'])
             mainclass.ui.quit_item.setText(ru_RU.get()['quit_mi'])
             mainclass.ui.about_item.setText(ru_RU.get()['about_mi'])
-            mainclass.ui.send_msg_btn.setText(ru_RU.get()['send_msg'])
-            mainclass.ui.message_text.setText(ru_RU.get()['cantsmsg'])
+            mainclass.child_widget.send_msg_btn.setText(ru_RU.get()['send_msg'])
+            if mainclass.child_widget.message_text.isEnabled() == False:
+                mainclass.child_widget.message_text.setText(ru_RU.get()['cantsmsg'])
             mainclass.ui.conn_quality_label.setText(ru_RU.get()['connqual'])
-        except:
-            pass
+        except Exception as e:
+            print(e)
     elif language == 'English':
         try:
             mainclass.ui.menu.setTitle(en_US.get()['filemenu'])
@@ -37,11 +38,12 @@ def translate_001(mainclass, form, language, en_US, ru_RU):
             mainclass.ui.settings_item.setText(en_US.get()['setsitem'])
             mainclass.ui.quit_item.setText(en_US.get()['quit_mi'])
             mainclass.ui.about_item.setText(en_US.get()['about_mi'])
-            mainclass.ui.send_msg_btn.setText(en_US.get()['send_msg'])
-            mainclass.ui.message_text.setText(en_US.get()['cantsmsg'])
+            mainclass.child_widget.send_msg_btn.setText(en_US.get()['send_msg'])
+            if mainclass.child_widget.message_text.isEnabled() == False:
+                mainclass.child_widget.message_text.setText(en_US.get()['cantsmsg'])
             mainclass.ui.conn_quality_label.setText(en_US.get()['connqual'])
-        except:
-            pass
+        except Exception as e:
+            print(e)
         try:
             form.title_label.setText(en_US.get()['1stsetup'])
             form.profiles_name.setText(en_US.get()['profiles'])
